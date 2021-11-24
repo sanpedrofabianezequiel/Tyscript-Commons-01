@@ -7,14 +7,14 @@ interface Props {
     initialState? : number
 }
 
-export const CounterHook = ({initialState= 5 } : Props) => {
+export const CounterHook = ({initialState= 10 } : Props) => {
   
-    const { counter,counterElement,handleClick} = useCounter();
+    const { counter,elementToAnimate,handleClick} = useCounter({maxCount:15});
 
     return (
         <>
             <h1>Counter Hooks:</h1>   
-            <h2 ref={counterElement}> {counter}</h2>
+            <h2 ref={elementToAnimate}> {counter}</h2>
             <button  onClick={handleClick}>
                 +1
             </button>
